@@ -1,92 +1,88 @@
- # Facial Recognition System
+# 🧠 Facial Recognition System
 
 ---
 
 ## 📌 Problem Statement
 
-Traditional security systems (passwords, ID cards, PINs) are vulnerable to theft, forgery, and misuse.  
-This project develops a facial recognition system that can authenticate or identify individuals reliably, even under variations in lighting, pose, or facial expressions.
+Traditional authentication systems — such as passwords, ID cards, or PIN codes — are vulnerable to theft, forgery, and misuse.  
+This project aims to build a **deep learning-based facial recognition system** capable of identifying individuals accurately and securely, even under variations in **lighting**, **pose**, or **facial expressions**.
 
 ---
 
 ## 🎯 Project Overview
 
-Build a face recognition model with:
+This system uses **FaceNet (InceptionResnetV1)** to extract deep facial embeddings, followed by an **SVM (Support Vector Machine)** classifier for recognition.  
+It supports both image upload and live camera input through **Streamlit** or **Gradio**.
 
-- High accuracy
-- Low false acceptance rate (FAR)
-- Real-time deployment for testing
+### ✅ Main Objectives:
+- Achieve **high recognition accuracy**
+- Ensure **low false acceptance rate (FAR)**
+- Enable **real-time face recognition** deployment
 
 ---
 
 ## 🗂 Dataset
 
-*LFW (Labeled Faces in the Wild)*
+**Dataset:** *LFW (Labeled Faces in the Wild)*  
+- Original dataset: ~13,000 images  
+- After filtering: ~9,100 valid images  
+- Distinct identities: ~1,600 people  
+- Data cleaned and filtered to ensure only individuals with multiple images remain  
 
-- Total images: 3023
-- Classes: 7 identities (e.g., Vladimir Putin, Tony Blair, Tiger Woods, etc.)
-
-*Preprocessing:*
-
-- Resized & normalized images
-- Face cropping ensured consistency
-- Features extracted → flattened into vectors
+### 🧹 Preprocessing Steps:
+- Automatic face detection using **MTCNN**
+- Face alignment and cropping
+- Image resizing & normalization
+- Embedding extraction via **FaceNet**
+- Embedding vectors stored in NumPy arrays (512 features per face)
 
 ---
 
 ## 🔍 Exploratory Data Analysis (EDA)
-
-- Image size distribution → consistent at (50 × 37) pixels
-- Color distribution analyzed across RGB channels
-- Entropy distribution plotted to measure information content
-- Data augmentation applied (flipping, rotation, scaling)
+- Verified image size consistency after preprocessing  
+- Explored number of samples per identity  
+- Filtered rare identities with less than 2–3 images  
+- Balanced dataset for fair training and testing  
 
 ---
 
 ## 🤖 Modeling
 
-*Baseline model:* Support Vector Classifier (SVC, linear kernel)  
-*Training/Testing split:* 80/20  
-*Evaluation metrics:* Accuracy, Precision, Recall, F1-score, FAR
+### 🔹 Model Architecture:
+1. **Face Embedding Extraction:**  
+   - Pretrained `InceptionResnetV1` (FaceNet) from `facenet-pytorch`  
+   - Output: 512-dimensional embedding vector per face  
+
+2. **Classifier:**  
+   - `SVC` (Support Vector Classifier) with RBF kernel  
+   - Trained on extracted embeddings
+
+### ⚙️ Training Setup:
+- Train/Test Split: 80/20  
+- Optimized SVM hyperparameters  
+- Model saved as: `classifier.pkl`
 
 ---
 
 ## 📊 Results
 
-- *Model Accuracy:* ~60.33%
-- *Classification Report:*
-  - Some classes with more samples → high precision & recall
-  - Other classes with fewer samples → lower recall
-  - Confusion mainly between visually similar faces
-- *Confusion Matrix:* Visualized with heatmap
+| Metric | Value |
+|--------|--------|
+| Accuracy | **≈ 80.0%** |
+| Precision (macro avg) | 0.63 |
+| Recall (macro avg) | 0.70 |
+| F1-score (weighted avg) | 0.70 |
 
-*Key Observations:*
-
-- Identities with many samples achieved higher accuracy.
-- Classes with limited data suffered from low recall.
-- Data augmentation improved robustness against lighting & pose variation.
+- Correctly recognized well-represented identities  
+- Misclassifications mainly for identities with few samples  
+- Significant accuracy improvement after using FaceNet embeddings  
 
 ---
 
 ## 🚀 Deployment
 
-*Platform:* Streamlit web app  
-
-*Features:*
-
-- Upload or capture an image for verification
-- Real-time identity testing
-
----
-## 🔮 Future Work
-
-- Train deeper models (CNN, FaceNet, VGG-Face) for higher accuracy
-- Expand dataset (e.g., VGGFace2) for better generalization
-- Optimize performance for real-time large-scale deployment
--  ---
-  *Presentation Slides:* 
- https://drive.google.com/drive/folders/1BGlp9aN-vVxYzPq_kVk6MjJZwE-7cu8x
-
- 
-
-## 📦 Repository Structure
+### 🧱 Platform Options:
+1. **Streamlit App (Local / VS Code)**  
+   Run the following command:
+   ```bash
+   streamlit run app.py
