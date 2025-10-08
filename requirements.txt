@@ -1,8 +1,8 @@
-gradio
+streamlit
+gdown
+facenet-pytorch
 torch
 torchvision
-facenet-pytorch
-pillow==11.0.0
-joblib
-
 numpy
+pillow
+scikit-learn
