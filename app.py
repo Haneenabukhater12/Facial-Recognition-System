@@ -16,7 +16,7 @@ MODEL_PATH = "classifier.pkl"
 
 if not os.path.exists(MODEL_PATH):
     st.info("⬇️ Downloading model from Google Drive...")
-    url = "https://drive.google.com/file/d/1tYcltIFwMc6lx1f4z5ZkDcIpy6eETz3R/view?usp=drivesdk"  # 🔹 Replace YOUR_FILE_ID with the actual file ID from your Google Drive link
+    url = "https://drive.google.com/uc?id=1tYcltIFwMc6lx1f4z5ZkDcIpy6eETz3R"   
     gdown.download(url, MODEL_PATH, quiet=False)
 
 # Load the model after download
