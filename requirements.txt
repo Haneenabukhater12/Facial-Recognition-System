@@ -1,0 +1,7 @@
+gradio
+torch
+torchvision
+facenet-pytorch
+pillow==10.2.0
+joblib
+numpy
