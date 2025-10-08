@@ -2,6 +2,7 @@ gradio
 torch
 torchvision
 facenet-pytorch
-pillow==10.2.0
+pillow==11.0.0
 joblib
+
 numpy
