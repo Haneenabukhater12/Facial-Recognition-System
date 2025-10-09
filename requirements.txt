@@ -1,9 +1,8 @@
-streamlit==1.38.0
-torch==2.8.0
-torchvision==0.23.0
-facenet-pytorch==2.6.0
-pillow==11.0.0
+scikit-learn==1.5.2
+joblib==1.3.2
+torch==2.2.2
+facenet-pytorch
+streamlit
+pillow==10.2.0
+gdown
 numpy==1.26.4
-scikit-learn==1.5.1
-joblib==1.4.2
-gdown==5.2.0
