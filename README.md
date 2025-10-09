@@ -84,8 +84,8 @@ These embeddings are then classified using a **Support Vector Machine (SVM)** mo
 ## 💻 Implementation  
 
 You can view the full training and preprocessing pipeline in the notebook below:  
-📓 **Notebook:** [`Untitled11.ipynb`](./Untitled11.ipynb)
-
+📓 **Notebook:
+(https://colab.research.google.com/drive/1OgoikJ53I9TQ0TOii2ikciDJ0aGYYSQ8#scrollTo=badbDA3_-PFW)
 ---
 
 if you want to try ,this is notebook link:  
