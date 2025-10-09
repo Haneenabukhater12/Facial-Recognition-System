@@ -88,12 +88,8 @@ You can view the full training and preprocessing pipeline in the notebook below:
 
 ---
 
-## 🚀 Deployment  
-
-### 🧩 Gradio Web App  
-
-Try the live demo here:  
-👉 **[Facial Recognition Web App](https://01185056159e72bdea.gradio.live/)**  
+if you want to try ,this is notebook link:  
+👉 ** https://colab.research.google.com/drive/1OgoikJ53I9TQ0TOii2ikciDJ0aGYYSQ8?usp=sharing**  
 
 #### Run Locally
 ```bash
