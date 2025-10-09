@@ -1,5 +1,4 @@
-import sys
-sys.path.append("D:\\PythonLibs")
+
 import streamlit as st
 from PIL import Image
 import torch
@@ -69,3 +68,4 @@ if image is not None:
         st.success(f"✅ Person recognized: {pred}")
     else:
         st.warning("❌ No face detected. Please try again.")
+
