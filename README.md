@@ -87,10 +87,6 @@ You can view the full training and preprocessing pipeline in the notebook below:
 📓 **Notebook:
 (https://colab.research.google.com/drive/1OgoikJ53I9TQ0TOii2ikciDJ0aGYYSQ8#scrollTo=badbDA3_-PFW)
 ---
-
-if you want to try ,this is notebook link:  
-👉 ** https://colab.research.google.com/drive/1OgoikJ53I9TQ0TOii2ikciDJ0aGYYSQ8?usp=sharing**  
-
 #### Run Locally
 ```bash
 pip install gradio torch torchvision facenet-pytorch pillow scikit-learn joblib numpy
